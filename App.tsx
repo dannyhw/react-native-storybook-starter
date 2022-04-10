@@ -1,2 +1,2 @@
-import StorybookUIRoot from './.storybook/Storybook';
-export { StorybookUIRoot as default };
+import StorybookUIRoot from './.ondevice/Storybook';
+export {StorybookUIRoot as default};
