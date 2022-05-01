@@ -5,6 +5,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-react-native-web',
     'storybook-addon-designs',
+    'storybook-addon-github-issues',
   ],
   framework: '@storybook/react',
 };

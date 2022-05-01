@@ -62,3 +62,6 @@ buck-out/
 
 #storybook
 /storybook-static
+
+#ENV
+.env

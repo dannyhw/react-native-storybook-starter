@@ -1,3 +1,7 @@
+
+
+
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
@@ -6,4 +10,9 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  issues: {
+    repository: process.env.GITHUB_REPOSITORY,
+    token: process.env.GITHUB_TOKEN,
+  },
 }
+

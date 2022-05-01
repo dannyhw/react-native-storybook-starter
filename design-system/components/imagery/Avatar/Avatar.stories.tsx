@@ -27,4 +27,5 @@ export default {
             url:'https://www.figma.com/proto/HN6q5ECt0hYoq4vgtoKdOv/imagery%2FAvatar?page-id=7%3A526&node-id=23%3A942&viewport=329%2C48%2C0.75&scaling=scale-down-width',    
         }
     ]
+    
   }
