@@ -1,0 +1,15 @@
+<script>
+    //Dirty stuff
+    let storybookConfig = JSON.parse(localStorage.getItem('storybook-layout'));
+ 
+    if (typeof storybookConfig === 'object' && storybookConfig !== null && storybookConfig.resizerPanel.x !== (window.innerWidth-976)) {
+        storybookConfig.resizerNav.x = 240;
+        storybookConfig.resizerPanel.x = (window.innerWidth-976);
+        localStorage.setItem('storybook-layout', JSON.stringify(storybookConfig));
+        document.location.reload();
+    } else if (storybookConfig === null) {
+        storybookConfig = { resizerNav: { x: 240, y: 0 }, resizerPanel: { x:(window.innerWidth-976), y: 0 } };
+        localStorage.setItem('storybook-layout', JSON.stringify(storybookConfig));
+        document.location.reload();
+    }
+</script>

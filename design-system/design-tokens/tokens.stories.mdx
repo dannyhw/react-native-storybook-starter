@@ -1,0 +1,48 @@
+import { Meta, Story, ColorPalette, ColorItem  } from '@storybook/addon-docs';
+import { Figma } from 'storybook-addon-designs/blocks'
+
+<Meta title="Tokens/Core"/>
+
+# Checkbox
+
+With `MDX`, we can define a story for `Checkbox` right in the middle of our
+Markdown documentation.
+
+
+<ColorPalette>
+  <ColorItem
+    title="theme.color.greyscale"
+    subtitle="Some of the greys"
+    colors={{ White: '#FFFFFF', Alabaster: '#F8F8F8', Concrete: '#F3F3F3' }}
+  />
+  <ColorItem 
+    title="theme.color.primary" 
+    subtitle="Coral" 
+    colors={{ WildWatermelon: '#FF4785' }} 
+  />
+  <ColorItem 
+    title="theme.color.secondary" 
+    subtitle="Ocean" 
+    colors={{ DodgerBlue: '#1EA7FD' }} 
+  />
+  <ColorItem
+    title="theme.color.positive"
+    subtitle="Green"
+    colors={{
+      Apple: 'rgba(102,191,60,1)',
+      Apple80: 'rgba(102,191,60,.8)',
+      Apple60: 'rgba(102,191,60,.6)',
+      Apple30: 'rgba(102,191,60,.3)',
+    }}
+  />
+</ColorPalette>
+<Figma
+  height="3000px"
+  collapsable
+  url="https://www.figma.com/proto/hq0i18XppXSwxp0EuVnYfB/primitives%2FText?page-id=2%3A1186&node-id=23%3A745&viewport=329%2C48%2C0.5&scaling=min-zoom"
+/>
+<Figma
+  height="2364px"
+  collapsable
+  url="https://www.figma.com/proto/hq0i18XppXSwxp0EuVnYfB/primitives%2FText?page-id=2%3A1186&node-id=23%3A786&viewport=329%2C48%2C0.5&scaling=min-zoom"
+/>
