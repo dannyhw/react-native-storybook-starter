@@ -6,7 +6,7 @@ import {Text as TextComponent} from './Text';
 export default {
     title: 'components/primitives/Text',
     component: TextComponent,
-  } as ComponentMeta<typeof Text>;
+  } as ComponentMeta<typeof TextComponent>;
 
   export const Text = () => (
     <TextComponent/>
