@@ -1,10 +1,18 @@
 import {ThemeProvider} from '@shopify/restyle';
-import theme from './../design-system/theme';
+import { useDarkMode } from 'storybook-dark-mode';
+import {lightTheme, darkTheme} from './../design-system/theme';
+
+const  ThemeWrapper = (props) => (
+    <ThemeProvider theme={useDarkMode() ? darkTheme : lightTheme}>
+      {props.children}
+    </ThemeProvider>
+  );
+
 
 const ThemeDecorator = (storyFn: any) => (
-    <ThemeProvider theme={theme}>
+    <ThemeWrapper>
         {storyFn()}
-    </ThemeProvider>
+    </ThemeWrapper>
   );
   
 export default ThemeDecorator;

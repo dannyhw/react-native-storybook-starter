@@ -1,0 +1,37 @@
+import { Meta, Story, ColorPalette, ColorItem  } from '@storybook/addon-docs';
+
+import {lightTheme, darkTheme} from './../theme';
+
+<Meta title="Theme/Colors"/>
+
+# Colors
+
+
+
+
+<ColorPalette>
+  <ColorItem
+    title="lightTheme.colors"
+    subtitle="Dark Theme"
+    colors={{
+      Red: lightTheme.colors.red,
+      Green: lightTheme.colors.green,
+      Purple: lightTheme.colors.purple,
+      Blue: lightTheme.colors.blue,
+      Text: lightTheme.colors.text,
+    }}
+  />
+  <ColorItem
+    title="darkTheme.colors"
+    subtitle="Dark Theme"
+    colors={{
+      Red: darkTheme.colors.red,
+      Green: darkTheme.colors.green,
+      Purple: darkTheme.colors.purple,
+      Blue: darkTheme.colors.blue,
+      Text: darkTheme.colors.text,
+    }}
+  />
+</ColorPalette>
+
+

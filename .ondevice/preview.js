@@ -1,4 +1,5 @@
 import {withBackgrounds} from '@storybook/addon-ondevice-backgrounds';
+
 export const decorators = [withBackgrounds];
 export const parameters = {
   backgrounds: [
@@ -6,4 +7,5 @@ export const parameters = {
     {name: 'warm', value: 'hotpink'},
     {name: 'cool', value: 'deepskyblue'},
   ],
+
 };

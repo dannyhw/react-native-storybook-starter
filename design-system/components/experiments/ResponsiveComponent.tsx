@@ -1,18 +1,12 @@
 import React from 'react';
-import {Text as RnText} from 'react-native';
 import {
     ColorProps,
     createBox,
     createText,
     useResponsiveProp,
     useTheme,
-    ResponsiveValue,
   } from '@shopify/restyle';
-  import {
-    ActivityIndicator,
-    TouchableOpacity,
-    TouchableOpacityProps,
-  } from 'react-native';
+
   import Theme from './../../theme';
 const Text = createText<Theme>();
 const Box = createBox<Theme>();
@@ -41,8 +35,7 @@ export const ResponsiveComponent = ({
     <Box flexDirection="row"  {...props}>
       <Text color={color}>
         This is {textColorProp} because the viewport is {bpByColor[textColorProp]} 
-      </Text>
-      
+      </Text> 
     </Box>
   );
 };
