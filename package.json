@@ -18,8 +18,9 @@
     "@react-native-async-storage/async-storage": "^1.17.3",
     "@react-native-community/datetimepicker": "^6.1.2",
     "@react-native-community/slider": "^4.2.1",
-    "react": "18.1.0",
-    "react-dom": "^18.1.0",
+    "@shopify/restyle": "^2.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-native": "0.68.1",
     "react-native-web": "^0.17.7"
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {useTheme} from '@shopify/restyle';
 
 export type ButtonProps = {
   onPress: () => void;
@@ -7,6 +8,7 @@ export type ButtonProps = {
   color?: string;
   textColor?: string;
 };
+
 
 const styles = StyleSheet.create({
   button: {
@@ -28,15 +30,17 @@ const styles = StyleSheet.create({
   },
 });
 
-export const MyButton = ({text, onPress, color, textColor}: ButtonProps) => (
+export const MyButton = ({text, onPress, color, textColor}: ButtonProps) => {
+  const theme = useTheme();
+  return(
   <View style={styles.buttonContainer}>
     <TouchableOpacity
       style={[styles.button, !!color && {backgroundColor: color}]}
       onPress={onPress}
       activeOpacity={0.8}>
       <Text style={[styles.buttonText, !!textColor && {color: textColor}]}>
-        {text}
+        {theme.colors.mainBackground}
       </Text>
     </TouchableOpacity>
   </View>
-);
+)};

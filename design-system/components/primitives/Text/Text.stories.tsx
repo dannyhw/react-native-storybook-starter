@@ -1,17 +1,24 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-
-import {Text as TextComponent} from './Text';
+import {
+    ColorProps,
+    createBox,
+    useResponsiveProp,
+    useTheme,
+  } from '@shopify/restyle';
+  import {createText} from '@shopify/restyle';
+import {Theme} from './../../../theme';
+import {Text} from './Text';
 
 export default {
     title: 'components/primitives/Text',
-    component: TextComponent,
-  } as ComponentMeta<typeof TextComponent>;
+    component: Text,
+  } as ComponentMeta<typeof Text>;
 
-  export const Text = () => (
-    <TextComponent/>
+  export const Base = () => (
+    <Text> Text Component </Text>
   );
-  Text.parameters = {
+  Base.parameters = {
     design: [
         {
             name: 'Status',
