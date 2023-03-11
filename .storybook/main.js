@@ -6,4 +6,7 @@ module.exports = {
     '@storybook/addon-react-native-web',
   ],
   framework: '@storybook/react',
+  core: {
+    builder: 'webpack5',
+  },
 };
