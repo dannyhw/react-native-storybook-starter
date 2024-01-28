@@ -3447,10 +3447,10 @@
     "@storybook/global" "^5.0.0"
     tiny-invariant "^1.3.1"
 
-"@storybook/addon-ondevice-actions@7.6.10-alpha.1":
-  version "7.6.10-alpha.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-actions/-/addon-ondevice-actions-7.6.10-alpha.1.tgz#a13cdb58cc20f1510c8e8137c42ddb2bc13db5f5"
-  integrity sha512-ngHK0H6Wwp+PUzIMr5LqIluCJpiLPV6VZ3J2PZCEVLqTuVV+eNC/ppZ2VP/5K34cePdoFwHAqGtUp6QNvjxX8w==
+"@storybook/addon-ondevice-actions@7.6.10-rc.0":
+  version "7.6.10-rc.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-actions/-/addon-ondevice-actions-7.6.10-rc.0.tgz#02ad8ee6a091e7a315ae19128e2fd0c3005be05f"
+  integrity sha512-7wgcntHxFuJJ5upjlOsZ3Il3fcwpEDXRMytVKgpxFmCeFlVbVSk8Jprr8eCukEzE1OvCDbpCngPw+c9AaSPZfw==
   dependencies:
     "@storybook/addon-actions" "^7.6.10"
     "@storybook/core-events" "^7.6.10"
@@ -3458,43 +3458,41 @@
     "@storybook/manager-api" "^7.6.10"
     fast-deep-equal "^2.0.1"
 
-"@storybook/addon-ondevice-backgrounds@7.6.10-alpha.1":
-  version "7.6.10-alpha.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-backgrounds/-/addon-ondevice-backgrounds-7.6.10-alpha.1.tgz#11af11343c582a900e7b827a6b6f389146383583"
-  integrity sha512-+flfQeViEZFpTzwYe3nW5ETFic+ryLd1X1rJsLy+bG7QmnZzr2X0JSmng6Al1NqjOka69VNgzzmpNCW+T8zokw==
+"@storybook/addon-ondevice-backgrounds@7.6.10-rc.0":
+  version "7.6.10-rc.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-backgrounds/-/addon-ondevice-backgrounds-7.6.10-rc.0.tgz#bf43eac47a571fc1e1f3e9cd98043a44c9252b09"
+  integrity sha512-jsRQ3mAuxFtvFBIzkJSsDxU/EiuMddFMjmywGzlfCrimrVeOsl2bMPnIyPFVevcy2XiBahmKzo/EdjMtdAyr/Q==
   dependencies:
-    "@storybook/api" "^7.6.10"
     "@storybook/manager-api" "^7.6.10"
     "@storybook/preview-api" "^7.6.10"
-    "@storybook/react-native-theming" "^7.6.10-alpha.1"
+    "@storybook/react-native-theming" "^7.6.10-rc.0"
 
-"@storybook/addon-ondevice-controls@7.6.10-alpha.1":
-  version "7.6.10-alpha.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-controls/-/addon-ondevice-controls-7.6.10-alpha.1.tgz#cf56cb195a1c3579c7732de0d48c73eb86b1efb7"
-  integrity sha512-eWn6P08LIE8x/9A9HxvN9Pk7WSP85Z/EKRKyGPVcCAYsDkjxy8dFoI1qUm3kbn++aoquHidDPbtjSgPYTs9yYA==
+"@storybook/addon-ondevice-controls@7.6.10-rc.0":
+  version "7.6.10-rc.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-controls/-/addon-ondevice-controls-7.6.10-rc.0.tgz#fbee919ddb260d99e491ab59635537ccc12a4362"
+  integrity sha512-QqDngJ86R+cqx6NOGkL3sLqgiVS8mfNzk4He0F3hlO/b9WQrFjPdhg1RYeMOu7VJgNYOsT41gxSc6y13IECNwg==
   dependencies:
     "@storybook/addon-controls" "^7.6.10"
     "@storybook/channels" "^7.6.10"
     "@storybook/client-logger" "^7.6.10"
     "@storybook/core-events" "^7.6.10"
     "@storybook/manager-api" "^7.6.10"
-    "@storybook/react-native-theming" "^7.6.10-alpha.1"
+    "@storybook/react-native-theming" "^7.6.10-rc.0"
     deep-equal "^1.0.1"
     prop-types "^15.7.2"
     react-native-modal-datetime-picker "^14.0.0"
     react-native-modal-selector "^2.1.1"
     tinycolor2 "^1.4.1"
 
-"@storybook/addon-ondevice-notes@7.6.10-alpha.1":
-  version "7.6.10-alpha.1"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-notes/-/addon-ondevice-notes-7.6.10-alpha.1.tgz#045f2f28b5a8e5a8daf0b6086d25ef70cc867408"
-  integrity sha512-SQZWKJNso1q3kPj7oS/9u691mFM0tRHNeycm++GSjDHOBkl0rf2fmxAHPfMXGVlsmy7CZ6TwX69li+pjvNaJdg==
+"@storybook/addon-ondevice-notes@7.6.10-rc.0":
+  version "7.6.10-rc.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-ondevice-notes/-/addon-ondevice-notes-7.6.10-rc.0.tgz#b50480b910ba7e6bed756bed72e2ff4663ab836b"
+  integrity sha512-WDV1hF8RMqxQNXY4xrqEsHLoMPy1pKg+jSTBcEVGilkPDXJRStZtF16uTkNepldqhkR1fHU8lKh/cvtmdJ3MKQ==
   dependencies:
-    "@storybook/api" "^7.6.10"
     "@storybook/client-logger" "^7.6.10"
     "@storybook/core-events" "^7.6.10"
     "@storybook/manager-api" "^7.6.10"
-    "@storybook/react-native-theming" "^7.6.10-alpha.1"
+    "@storybook/react-native-theming" "^7.6.10-rc.0"
     react-native-markdown-display "6.1.6"
 
 "@storybook/addon-outline@7.6.10":
@@ -3521,14 +3519,6 @@
   integrity sha512-+bA6juC/lH4vEhk+w0rXakaG8JgLG4MOYrIudk5vJKQaC6X58LIM9N4kzIS2KSExRhkExXBPrWsnMfCo7uxmKg==
   dependencies:
     memoizerific "^1.11.3"
-
-"@storybook/api@^7.6.10":
-  version "7.6.10"
-  resolved "https://registry.yarnpkg.com/@storybook/api/-/api-7.6.10.tgz#d9ce0e72a9332a9ebe0ac94e49c50ef7c530172f"
-  integrity sha512-28qfs7sdzcnKfGBVnWuKgqAPe++NLrMjL6cp/rxuRlAtGyl0Q3eC9jj1ggOm4SFVTu6NoFzTuTXFUEbskZVk1Q==
-  dependencies:
-    "@storybook/client-logger" "7.6.10"
-    "@storybook/manager-api" "7.6.10"
 
 "@storybook/blocks@7.6.10":
   version "7.6.10"
@@ -3624,14 +3614,6 @@
     webpack-dev-middleware "^6.1.1"
     webpack-hot-middleware "^2.25.1"
     webpack-virtual-modules "^0.5.0"
-
-"@storybook/channel-websocket@^7.6.10":
-  version "7.6.10"
-  resolved "https://registry.yarnpkg.com/@storybook/channel-websocket/-/channel-websocket-7.6.10.tgz#8e7d94436087b90ab9511d7f5f9b0c104c8c3dd0"
-  integrity sha512-jY9ECJk8EuTafJU6BOvXfsxDGgjEtPEIV7GXFQA3Z7UpyVIRXtHhFCHDNDFWxIIrpc8/1gNPbZqVQCjmITVhtw==
-  dependencies:
-    "@storybook/channels" "7.6.10"
-    "@storybook/client-logger" "7.6.10"
 
 "@storybook/channels@7.6.10", "@storybook/channels@^7.6.10":
   version "7.6.10"
@@ -4003,17 +3985,16 @@
   resolved "https://registry.yarnpkg.com/@storybook/react-dom-shim/-/react-dom-shim-7.6.10.tgz#d16df5d65a51ed66df92430d8f51d50bd177f2c2"
   integrity sha512-M+N/h6ximacaFdIDjMN2waNoWwApeVYTpFeoDppiFTvdBTXChyIuiPgYX9QSg7gDz92OaA52myGOot4wGvXVzg==
 
-"@storybook/react-native-theming@^7.6.10-alpha.1":
-  version "7.6.10-alpha.1"
-  resolved "https://registry.yarnpkg.com/@storybook/react-native-theming/-/react-native-theming-7.6.10-alpha.1.tgz#d08b9e559b2321be21b9fc7bfe9963b12cd9a8e5"
-  integrity sha512-l1eOSuBtS0Fi3j2E/tPCpaXckFVm5yrHo6sE/Ep88IjJWmUyg8jIkASdynHpj4jAfZmEVzGyTv1UUgPVlwt+PA==
+"@storybook/react-native-theming@^7.6.10-rc.0":
+  version "7.6.10-rc.0"
+  resolved "https://registry.yarnpkg.com/@storybook/react-native-theming/-/react-native-theming-7.6.10-rc.0.tgz#b70d279d16f4a14522cd951557360dcafdf74ca2"
+  integrity sha512-4WqmCpOUKFL8d4tGwxNGTiLX49dTp3BAkP7AI6iK/dztSVzza7peck7jNVHdVYuguFfufths0/MDWThBTSsX2g==
 
-"@storybook/react-native@7.6.10-alpha.1":
-  version "7.6.10-alpha.1"
-  resolved "https://registry.yarnpkg.com/@storybook/react-native/-/react-native-7.6.10-alpha.1.tgz#f18b4436cae924640eb9307b291402de201e4551"
-  integrity sha512-oiR/qYaOOJhusJc8E6iP1Zp+SXsN3p/6Ac/by5CcxfVcCI0NErg4w6wfb3jvzTRs7cSbH+j23EX81YcDxBzavw==
+"@storybook/react-native@7.6.10-rc.0":
+  version "7.6.10-rc.0"
+  resolved "https://registry.yarnpkg.com/@storybook/react-native/-/react-native-7.6.10-rc.0.tgz#b63a8c969eb9132069cd7ea6a83e2cf80d9affc9"
+  integrity sha512-umjGJtJ6u+yHhjezov0Ousw9W59lTe3QmGSHEkXozO4D3UA6ii68YgkA6gVFcOi5R3K4W3mh8u5bM03u1ZeTJA==
   dependencies:
-    "@storybook/channel-websocket" "^7.6.10"
     "@storybook/channels" "^7.6.10"
     "@storybook/client-logger" "^7.6.10"
     "@storybook/core-client" "^7.6.10"
@@ -4026,7 +4007,7 @@
     "@storybook/preview-api" "^7.6.10"
     "@storybook/preview-web" "^7.6.10"
     "@storybook/react" "^7.6.10"
-    "@storybook/react-native-theming" "^7.6.10-alpha.1"
+    "@storybook/react-native-theming" "^7.6.10-rc.0"
     chokidar "^3.5.1"
     commander "^8.2.0"
     dedent "^1.5.1"
