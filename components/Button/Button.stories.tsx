@@ -1,18 +1,19 @@
-// stories/MyButton.stories.tsx
+import type {Meta, StoryObj} from '@storybook/react';
 
-import {ComponentMeta, StoryObj} from '@storybook/react';
+import {MyButton} from './Button';
 
-import {ButtonProps, MyButton} from './Button';
-
-export default {
+const meta = {
   title: 'components/MyButton',
-  argTypes: {onPress: {action: 'pressed'}},
   component: MyButton,
-} as ComponentMeta<typeof MyButton>;
+} satisfies Meta<typeof MyButton>;
 
-export const Basic: StoryObj<ButtonProps> = {
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   args: {
-    text: 'Hello World!!',
+    text: 'Hello World',
     color: 'purple',
   },
 };
