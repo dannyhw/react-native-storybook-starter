@@ -41,9 +41,3 @@ To update the stories one time
 ```
 yarn update-stories
 ```
-
-To watch the stories files
-
-```
-yarn storybook-watcher
-```
