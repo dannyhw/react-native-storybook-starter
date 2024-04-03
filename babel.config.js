@@ -3,5 +3,6 @@ module.exports = {
   plugins: [
     'transform-inline-environment-variables',
     ['babel-plugin-react-docgen-typescript', {exclude: 'node_modules'}],
+    'react-native-reanimated/plugin',
   ],
 };
