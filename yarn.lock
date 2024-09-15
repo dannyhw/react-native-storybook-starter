@@ -2927,9 +2927,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-ondevice-actions@npm:8.3.0-alpha.0":
-  version: 8.3.0-alpha.0
-  resolution: "@storybook/addon-ondevice-actions@npm:8.3.0-alpha.0"
+"@storybook/addon-ondevice-actions@npm:8.3.0-alpha.1":
+  version: 8.3.0-alpha.1
+  resolution: "@storybook/addon-ondevice-actions@npm:8.3.0-alpha.1"
   dependencies:
     "@storybook/addon-actions": "npm:^8.3.0"
     "@storybook/core": "npm:^8.3.0"
@@ -2938,30 +2938,30 @@ __metadata:
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 10/1e28b2a234947dfa2cc8abbedc18ed65e4e1975417ad23236f7906dc8b204f1097862185f9bcdf2fe4e42a21d76b9d1c7db4c76dffa91702275bdd168a0979ef
+  checksum: 10/89b79298e6d8a1ec46b6b59351a86d3070445dfcc8dddc4d2d4744ec5c963ed1f0d38de7a81ecaa254177883ee12151d3390ab2e7d96c28c2d095f37a2edc837
   languageName: node
   linkType: hard
 
-"@storybook/addon-ondevice-backgrounds@npm:8.3.0-alpha.0":
-  version: 8.3.0-alpha.0
-  resolution: "@storybook/addon-ondevice-backgrounds@npm:8.3.0-alpha.0"
+"@storybook/addon-ondevice-backgrounds@npm:8.3.0-alpha.1":
+  version: 8.3.0-alpha.1
+  resolution: "@storybook/addon-ondevice-backgrounds@npm:8.3.0-alpha.1"
   dependencies:
     "@storybook/core": "npm:^8.3.0"
-    "@storybook/react-native-theming": "npm:^8.3.0-alpha.0"
+    "@storybook/react-native-theming": "npm:^8.3.0-alpha.1"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 10/6725c8845404912f0528c679c3666d7f60c40ff73c8dd7a010a1099b915d18f10f6fc270e2d185d2900725100db2e7d8b25d85d7370451006cd16abce082fd34
+  checksum: 10/08d26329df280fec3e8cf5a13e9224dc6c35989cd1bc7469b8bac7a8b095cd54eab89bf72fd65670c536f3e965bb1e839bc0d6fc02083d0bda153c5f562b56d1
   languageName: node
   linkType: hard
 
-"@storybook/addon-ondevice-controls@npm:8.3.0-alpha.0":
-  version: 8.3.0-alpha.0
-  resolution: "@storybook/addon-ondevice-controls@npm:8.3.0-alpha.0"
+"@storybook/addon-ondevice-controls@npm:8.3.0-alpha.1":
+  version: 8.3.0-alpha.1
+  resolution: "@storybook/addon-ondevice-controls@npm:8.3.0-alpha.1"
   dependencies:
     "@storybook/addon-controls": "npm:^8.3.0"
     "@storybook/core": "npm:^8.3.0"
-    "@storybook/react-native-theming": "npm:^8.3.0-alpha.0"
+    "@storybook/react-native-theming": "npm:^8.3.0-alpha.1"
     deep-equal: "npm:^1.0.1"
     prop-types: "npm:^15.7.2"
     react-native-modal-datetime-picker: "npm:^14.0.0"
@@ -2973,21 +2973,21 @@ __metadata:
     "@react-native-community/slider": "*"
     react: "*"
     react-native: "*"
-  checksum: 10/5013e58dde0523c0bef6ee997f42cf13c58af0356a4115f87ad956abc23a7077ee901328ff44386b3c1aa876d02f1e9f8652e316e824b832dc8e2dcebeced06a
+  checksum: 10/6b2598f18ff2e854b7f220be0c10e44630b7ca01c5ce260a37a90fd5f845962e091e5e36bd076c8a56abc34fb74e8df920f03b75747cb3fe9babe013efc77c14
   languageName: node
   linkType: hard
 
-"@storybook/addon-ondevice-notes@npm:8.3.0-alpha.0":
-  version: 8.3.0-alpha.0
-  resolution: "@storybook/addon-ondevice-notes@npm:8.3.0-alpha.0"
+"@storybook/addon-ondevice-notes@npm:8.3.0-alpha.1":
+  version: 8.3.0-alpha.1
+  resolution: "@storybook/addon-ondevice-notes@npm:8.3.0-alpha.1"
   dependencies:
     "@storybook/core": "npm:^8.3.0"
-    "@storybook/react-native-theming": "npm:^8.3.0-alpha.0"
+    "@storybook/react-native-theming": "npm:^8.3.0-alpha.1"
     react-native-markdown-display: "npm:^7.0.2"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 10/8a72825186a826eb4a4b97c5d5ddba83a0761db88196735e759e8435514bc87db5e072c1e3f4f9b36f416d59fe067450ba41793f6159e3663be2e9e4987c49f6
+  checksum: 10/63e8e4973b8b73dcb8f2ed04bab38ff68af305eab1e4f847e5347b1428983d109709aa05ccaad9ff41719ceace085f41a9b01b7cdd44da62fd1e437df170bdef
   languageName: node
   linkType: hard
 
@@ -3292,25 +3292,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-native-theming@npm:^8.3.0-alpha.0":
-  version: 8.3.0-alpha.0
-  resolution: "@storybook/react-native-theming@npm:8.3.0-alpha.0"
+"@storybook/react-native-theming@npm:^8.3.0-alpha.1":
+  version: 8.3.0-alpha.1
+  resolution: "@storybook/react-native-theming@npm:8.3.0-alpha.1"
   dependencies:
     polished: "npm:^4.3.1"
   peerDependencies:
     react: "*"
     react-native: ">=0.57.0"
-  checksum: 10/4ae66ca38729d8c04d3ace2aeef54d6cb11cfe2e060bd12c1220af337501324961ff7bed3df1e9ef4a6685faa2fc9e064e8c9801be9b9abe7a3f5e2bedeb3b7e
+  checksum: 10/0cf948eb543937aa0951fdc1c19b57d7bc86d4a8df1c201c990ec5ad1e8b586fd6b7b4876326f1bdbcf821bd1a85068bef0d990e97e113984a7de27dc68dd23b
   languageName: node
   linkType: hard
 
-"@storybook/react-native-ui@npm:^8.3.0-alpha.0":
-  version: 8.3.0-alpha.0
-  resolution: "@storybook/react-native-ui@npm:8.3.0-alpha.0"
+"@storybook/react-native-ui@npm:^8.3.0-alpha.1":
+  version: 8.3.0-alpha.1
+  resolution: "@storybook/react-native-ui@npm:8.3.0-alpha.1"
   dependencies:
     "@storybook/core": "npm:^8.3.0"
     "@storybook/react": "npm:^8.3.0"
-    "@storybook/react-native-theming": "npm:^8.3.0-alpha.0"
+    "@storybook/react-native-theming": "npm:^8.3.0-alpha.1"
     fuse.js: "npm:^7.0.0"
     memoizerific: "npm:^1.11.3"
     polished: "npm:^4.3.1"
@@ -3323,20 +3323,20 @@ __metadata:
     react-native-reanimated: ">=3"
     react-native-safe-area-context: "*"
     react-native-svg: ">=14"
-  checksum: 10/e386af968cd10e0d5a87d67c92ceb8a0b129be176f5e1d54b2787cf0f5a60eafa8c5fe542d943684f8d1a3f9582fb54073e30859edb47953c7d109b479ec248b
+  checksum: 10/d81e1f15d3c7ecbd0ea685141a64589233aa20e9380cb35f8161acb3dc026d3a11ae015742d0614dd00e8d89c23c46b953cf1ab638f4e16ac8f910c42934930d
   languageName: node
   linkType: hard
 
-"@storybook/react-native@npm:8.3.0-alpha.0":
-  version: 8.3.0-alpha.0
-  resolution: "@storybook/react-native@npm:8.3.0-alpha.0"
+"@storybook/react-native@npm:8.3.0-alpha.1":
+  version: 8.3.0-alpha.1
+  resolution: "@storybook/react-native@npm:8.3.0-alpha.1"
   dependencies:
     "@storybook/core": "npm:^8.3.0"
     "@storybook/csf": "npm:^0.1.1"
     "@storybook/global": "npm:^5.0.0"
     "@storybook/react": "npm:^8.3.0"
-    "@storybook/react-native-theming": "npm:^8.3.0-alpha.0"
-    "@storybook/react-native-ui": "npm:^8.3.0-alpha.0"
+    "@storybook/react-native-theming": "npm:^8.3.0-alpha.1"
+    "@storybook/react-native-ui": "npm:^8.3.0-alpha.1"
     chokidar: "npm:^3.5.1"
     commander: "npm:^8.2.0"
     dedent: "npm:^1.5.1"
@@ -3344,6 +3344,7 @@ __metadata:
     glob: "npm:^7.1.7"
     prettier: "npm:^2.4.1"
     react-native-swipe-gestures: "npm:^1.0.5"
+    react-native-url-polyfill: "npm:^2.0.0"
     type-fest: "npm:~2.19"
     util: "npm:^0.12.4"
     ws: "npm:^8.18.0"
@@ -3356,7 +3357,7 @@ __metadata:
   bin:
     sb-rn-get-stories: ./bin/get-stories.js
     sb-rn-watcher: ./bin/watcher.js
-  checksum: 10/926db472c5ab96e85777101e68fecb327d55e233e501b965075b9182cab3625792d823beafc8d5298dd33625852cb9c02576feb3d92ad394d027f4085dad7aa3
+  checksum: 10/43351e492322ef06d4f5fee9342aef167b06bf02d4f6777acb122f60357482cf97a4033e825498bfef28d5e8437bb683c53bc68b95bcf15457724844e07b2293
   languageName: node
   linkType: hard
 
@@ -11223,14 +11224,14 @@ __metadata:
     "@storybook/addon-controls": "npm:^8.3.0"
     "@storybook/addon-essentials": "npm:^8.3.0"
     "@storybook/addon-links": "npm:^8.3.0"
-    "@storybook/addon-ondevice-actions": "npm:8.3.0-alpha.0"
-    "@storybook/addon-ondevice-backgrounds": "npm:8.3.0-alpha.0"
-    "@storybook/addon-ondevice-controls": "npm:8.3.0-alpha.0"
-    "@storybook/addon-ondevice-notes": "npm:8.3.0-alpha.0"
+    "@storybook/addon-ondevice-actions": "npm:8.3.0-alpha.1"
+    "@storybook/addon-ondevice-backgrounds": "npm:8.3.0-alpha.1"
+    "@storybook/addon-ondevice-controls": "npm:8.3.0-alpha.1"
+    "@storybook/addon-ondevice-notes": "npm:8.3.0-alpha.1"
     "@storybook/addon-react-native-web": "npm:^0.0.22"
     "@storybook/addon-webpack5-compiler-babel": "npm:^3.0.3"
     "@storybook/react": "npm:^8.3.0"
-    "@storybook/react-native": "npm:8.3.0-alpha.0"
+    "@storybook/react-native": "npm:8.3.0-alpha.1"
     "@storybook/react-webpack5": "npm:^8.3.0"
     "@storybook/test": "npm:^8.3.0"
     "@types/jest": "npm:^29.5.13"
@@ -11251,7 +11252,6 @@ __metadata:
     react-native-reanimated: "npm:^3.15.2"
     react-native-safe-area-context: "npm:^4.11.0"
     react-native-svg: "npm:^15.6.0"
-    react-native-url-polyfill: "npm:^2.0.0"
     react-native-web: "npm:^0.19.12"
     react-test-renderer: "npm:18.3.1"
     storybook: "npm:^8.3.0"
