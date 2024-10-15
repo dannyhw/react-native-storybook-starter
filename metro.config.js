@@ -8,11 +8,27 @@ const defaultConfig = getDefaultConfig(__dirname);
  *
  * @type {import('metro-config').MetroConfig}
  */
-const config = {};
+const config = {
+  resolver: {
+    resolveRequest: (context, moduleName, platform) => {
+      if (
+        (moduleName.startsWith('storybook') ||
+          moduleName.startsWith('@storybook')) &&
+        process.env.STORYBOOK_ENABLED !== 'true'
+      ) {
+        return {
+          type: 'empty',
+        };
+      }
+
+      return context.resolveRequest(context, moduleName, platform);
+    },
+  },
+};
 
 const finalConfig = mergeConfig(defaultConfig, config);
 
 module.exports = withStorybook(finalConfig, {
-  enabled: true,
+  enabled: process.env.STORYBOOK_ENABLED === 'true',
   configPath: path.resolve(__dirname, './.ondevice'),
 });
