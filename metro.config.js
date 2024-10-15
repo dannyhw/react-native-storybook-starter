@@ -13,6 +13,6 @@ const config = {};
 const finalConfig = mergeConfig(defaultConfig, config);
 
 module.exports = withStorybook(finalConfig, {
-    enabled: process.env.STORYBOOK_ENABLED === 'true',
-    configPath: path.resolve(__dirname, './.ondevice'),
+  enabled: true,
+  configPath: path.resolve(__dirname, './.ondevice'),
 });
