@@ -10,31 +10,31 @@ To get all the dependencies run
 yarn install
 ```
 
-To run on the web use
+To run on the web with addon-react-native-web use:
+
+```
+yarn storybook:web
+```
+
+To run storybook on ios or android using metro (this starts the metro server with storybook enabled)
 
 ```
 yarn storybook
 ```
 
-To run on ios or android
+then to build for ios or android in another terminal run
 
 ```
-yarn start
-```
-
-in another terminal run
-
-```
-yarn ios
+yarn storybook:ios
 ```
 
 or
 
 ```
-yarn android
+yarn storybook:android
 ```
 
-To update the stories one time
+To update the stories one time, this happens once automatically when metro starts and withStorybook is enabled.
 
 ```
 yarn storybook-generate

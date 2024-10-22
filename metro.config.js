@@ -8,27 +8,20 @@ const defaultConfig = getDefaultConfig(__dirname);
  *
  * @type {import('metro-config').MetroConfig}
  */
-const config = {
-  resolver: {
-    resolveRequest: (context, moduleName, platform) => {
-      if (
-        (moduleName.startsWith('storybook') ||
-          moduleName.startsWith('@storybook')) &&
-        process.env.STORYBOOK_ENABLED !== 'true'
-      ) {
-        return {
-          type: 'empty',
-        };
-      }
-
-      return context.resolveRequest(context, moduleName, platform);
-    },
-  },
-};
+const config = {};
 
 const finalConfig = mergeConfig(defaultConfig, config);
 
-module.exports = withStorybook(finalConfig, {
+/**
+ * @type {import('@storybook/react-native/metro/withStorybook').WithStorybookOptions}
+ */
+const storybookOptions = {
+  // set this to "enabled: true" to enable storybook config always
   enabled: process.env.STORYBOOK_ENABLED === 'true',
   configPath: path.resolve(__dirname, './.ondevice'),
-});
+
+  // set this to true to remove storybook from the bundle when disabled
+  onDisabledRemoveStorybook: false,
+};
+
+module.exports = withStorybook(finalConfig, storybookOptions);
