@@ -21,7 +21,7 @@ const storybookOptions = {
   configPath: path.resolve(__dirname, './.ondevice'),
 
   // set this to true to remove storybook from the bundle when disabled
-  onDisabledRemoveStorybook: false,
+  onDisabledRemoveStorybook: true,
 };
 
 module.exports = withStorybook(finalConfig, storybookOptions);
