@@ -1,14 +1,15 @@
 const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 const path = require('path');
 const withStorybook = require('@storybook/react-native/metro/withStorybook');
-const defaultConfig = getDefaultConfig(__dirname);
 /**
  * Metro configuration
  * https://reactnative.dev/docs/metro
  *
- * @type {import('metro-config').MetroConfig}
+ * @type {import('@react-native/metro-config').MetroConfig}
  */
 const config = {};
+
+const defaultConfig = getDefaultConfig(__dirname);
 
 const finalConfig = mergeConfig(defaultConfig, config);
 
@@ -23,5 +24,4 @@ const storybookOptions = {
   // set this to true to remove storybook from the bundle when disabled
   onDisabledRemoveStorybook: true,
 };
-
 module.exports = withStorybook(finalConfig, storybookOptions);
