@@ -18,7 +18,7 @@ const finalConfig = mergeConfig(defaultConfig, config);
 const storybookOptions = {
   // set this to "enabled: true" to enable storybook config always
   enabled: process.env.STORYBOOK_ENABLED === 'true',
-  configPath: path.resolve(__dirname, './.ondevice'),
+  configPath: path.resolve(__dirname, './.rnstorybook'),
 
   // set this to true to remove storybook from the bundle when disabled
   onDisabledRemoveStorybook: true,
