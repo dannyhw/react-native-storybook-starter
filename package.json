@@ -40,10 +40,7 @@
     "@react-native/eslint-config": "0.76.1",
     "@react-native/metro-config": "0.76.1",
     "@react-native/typescript-config": "0.76.1",
-    "@storybook/addon-actions": "^8.5.3",
-    "@storybook/addon-controls": "^8.5.3",
     "@storybook/addon-essentials": "^8.5.3",
-    "@storybook/addon-links": "^8.5.3",
     "@storybook/addon-ondevice-actions": "^8.5.4",
     "@storybook/addon-ondevice-backgrounds": "^8.5.4",
     "@storybook/addon-ondevice-controls": "^8.5.4",
@@ -51,7 +48,6 @@
     "@storybook/react": "^8.5.3",
     "@storybook/react-native": "^8.5.4",
     "@storybook/react-native-web-vite": "^8.5.3",
-    "@storybook/react-webpack5": "^8.5.3",
     "@storybook/test": "^8.5.3",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
@@ -66,7 +62,8 @@
     "prettier": "2.8.8",
     "react-test-renderer": "18.3.1",
     "storybook": "^8.5.3",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vite": "^6.1.0"
   },
   "engines": {
     "node": ">=18"

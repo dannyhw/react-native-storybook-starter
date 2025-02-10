@@ -1,17 +1,16 @@
 /** @type{import("@storybook/react-webpack5").StorybookConfig} */
 module.exports = {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-react-native-web',
-    '@storybook/addon-webpack5-compiler-babel'
-  ],
+  addons: ['@storybook/addon-essentials'],
   framework: {
-    name: '@storybook/react-webpack5',
+    name: '@storybook/react-native-web-vite',
     options: {},
   },
   docs: {
     autodocs: true,
+  },
+
+  typescript: {
+    reactDocgen: 'react-docgen',
   },
 };
