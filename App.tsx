@@ -21,7 +21,7 @@ function App() {
 let AppEntryPoint = App;
 
 if (process.env.STORYBOOK_ENABLED) {
-  AppEntryPoint = require('./.ondevice').default;
+  AppEntryPoint = require('./.rnstorybook').default;
 }
 
 export default AppEntryPoint;
