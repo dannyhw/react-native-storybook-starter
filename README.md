@@ -39,3 +39,6 @@ To update the stories one time, this happens once automatically when metro start
 ```
 yarn storybook-generate
 ```
+
+navigate to a story with deep link example
+`npx uri-scheme open "rnstorybook-starter:///?STORYBOOK_STORY_ID=button--secondary" --android --ios`
