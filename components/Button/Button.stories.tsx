@@ -3,7 +3,6 @@ import {action} from '@storybook/addon-actions';
 import {MyButton} from './Button';
 
 const meta = {
-  title: 'components/MyButton',
   component: MyButton,
 } satisfies Meta<typeof MyButton>;
 
@@ -15,6 +14,14 @@ export const Basic: Story = {
   args: {
     text: 'Hello World',
     color: 'purple',
+    onPress: action('onPress'),
+  },
+};
+
+export const Secondary: Story = {
+  args: {
+    text: 'Secondary Button',
+    color: 'blue',
     onPress: action('onPress'),
   },
 };
