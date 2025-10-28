@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View} from 'react-native';
-
+import { StyleSheet, Text, View } from 'react-native';
+import StorybookUIRoot from './.rnstorybook';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -9,18 +9,14 @@ const styles = StyleSheet.create({
   },
 });
 
-function App() {
+export default function App() {
+  if (process.env.STORYBOOK_ENABLED) {
+    return <StorybookUIRoot />;
+  }
+
   return (
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
     </View>
   );
 }
-
-let AppEntryPoint = App;
-
-if (process.env.STORYBOOK_ENABLED) {
-  AppEntryPoint = require('./.rnstorybook').default;
-}
-
-export default AppEntryPoint;
