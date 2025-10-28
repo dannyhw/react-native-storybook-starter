@@ -9,8 +9,11 @@ const styles = StyleSheet.create({
   },
 });
 
+// @ts-ignore add process.env to global types to avoid type error
+const isStorybookEnabled = process.env.STORYBOOK_ENABLED === 'true';
+
 export default function App() {
-  if (process.env.STORYBOOK_ENABLED) {
+  if (isStorybookEnabled) {
     return <StorybookUIRoot />;
   }
 
