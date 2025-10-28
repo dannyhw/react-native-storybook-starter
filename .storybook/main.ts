@@ -1,5 +1,5 @@
 /** @type{import("@storybook/react-webpack5").StorybookConfig} */
-module.exports = {
+export default {
   stories: ['../components/**/*.stories.?(ts|tsx|js|jsx)'],
   addons: ['@storybook/addon-docs'],
   framework: {
@@ -8,9 +8,5 @@ module.exports = {
   },
   docs: {
     autodocs: true,
-  },
-
-  typescript: {
-    reactDocgen: 'react-docgen',
   },
 };
