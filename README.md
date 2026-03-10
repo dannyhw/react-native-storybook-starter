@@ -48,4 +48,4 @@ yarn storybook-generate
 ```
 
 navigate to a story with deep link example
-`npx uri-scheme open "rnstorybook-starter:///?STORYBOOK_STORY_ID=button--secondary" --android --ios`
+`npx uri-scheme open "rnstorybook-starter:///storybook?STORYBOOK_STORY_ID=button--secondary" --android --ios`
