@@ -18,4 +18,5 @@ module.exports = withStorybook(finalConfig, {
   // set this to "enabled: true" to enable storybook config always
   enabled: process.env.STORYBOOK_ENABLED === 'true',
   liteMode: true,
+  websockets: 'auto',
 });

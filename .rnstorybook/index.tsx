@@ -8,6 +8,7 @@ const StorybookUIRoot = view.getStorybookUI({
     setItem: AsyncStorage.setItem,
   },
   CustomUIComponent: LiteUI,
+  enableWebsockets: true,
 });
 
 export default StorybookUIRoot;
