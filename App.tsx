@@ -1,25 +1,53 @@
-import { StyleSheet, Text, View } from 'react-native';
 import StorybookUIRoot from './.rnstorybook';
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+import { createStaticNavigation } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { HomeScreen } from './src/screens/Home';
+import { DevSettings } from 'react-native';
 
 // @ts-ignore add process.env to global types to avoid type error
 const isStorybookEnabled = process.env.STORYBOOK_ENABLED === 'true';
 
-export default function App() {
-  if (isStorybookEnabled) {
-    return <StorybookUIRoot />;
-  }
+const RootStack = createNativeStackNavigator({
+  initialRouteName: isStorybookEnabled ? 'Storybook' : 'Home',
+  screens: {
+    Home: {
+      screen: HomeScreen,
+      options: {
+        headerShown: true,
+      },
+    },
+    ...(isStorybookEnabled
+      ? {
+          Storybook: {
+            screen: StorybookUIRoot,
+            options: {
+              headerShown: false,
+            },
+          },
+        }
+      : {}),
+  },
+});
 
+const Navigation = createStaticNavigation(RootStack);
+
+export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <Navigation
+      ref={ref => {
+        if (isStorybookEnabled && __DEV__) {
+          DevSettings.addMenuItem('go to storybook', () => {
+            ref?.navigate('Storybook');
+          });
+          DevSettings.addMenuItem('go to home', () => {
+            ref?.navigate('Home');
+          });
+        }
+      }}
+      linking={{
+        enabled: 'auto',
+        prefixes: ['rnstorybook-starter://'],
+      }}
+    />
   );
 }

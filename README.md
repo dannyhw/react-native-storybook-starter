@@ -10,6 +10,13 @@ To get all the dependencies run
 yarn install
 ```
 
+for iOS
+
+```
+cd ios
+pod install
+```
+
 To run on the web with addon-react-native-web use:
 
 ```
