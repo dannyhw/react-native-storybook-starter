@@ -31,11 +31,12 @@ class SceneDelegate: RCTDefaultReactNativeFactoryDelegate, UIWindowSceneDelegate
   }
 
   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-    guard let context = URLContexts.first else { return }
-    var options: [UIApplication.OpenURLOptionsKey: Any] = [:]
-    options[.sourceApplication] = context.options.sourceApplication
-    options[.annotation] = context.options.annotation
-    RCTLinkingManager.application(UIApplication.shared, open: context.url, options: options)
+    for context in URLContexts {
+      var options: [UIApplication.OpenURLOptionsKey: Any] = [:]
+      options[.sourceApplication] = context.options.sourceApplication
+      options[.annotation] = context.options.annotation
+      RCTLinkingManager.application(UIApplication.shared, open: context.url, options: options)
+    }
   }
 
   func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
