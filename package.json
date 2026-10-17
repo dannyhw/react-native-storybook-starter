@@ -27,6 +27,7 @@
     "@react-navigation/native-stack": "^7.21.0",
     "react": "19.3.0",
     "react-native": "0.88.0",
+    "react-native-enriched-markdown": "^1.1.1",
     "react-native-gesture-handler": "^3.4.0",
     "react-native-reanimated": "^4.7.1",
     "react-native-safe-area-context": "^5.10.1",
@@ -74,6 +75,16 @@
   },
   "engines": {
     "node": "^22.13.0 || ^24.3.0 || >= 26.0.0"
+  },
+  "enriched-markdown": {
+    "enableCodeHighlight": true,
+    "codeHighlightLanguages": [
+      "tsx",
+      "bash",
+      "json"
+    ],
+    "enableMath": false,
+    "enableVideo": false
   },
   "packageManager": "yarn@4.9.1"
 }

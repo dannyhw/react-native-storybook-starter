@@ -10960,6 +10960,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-enriched-markdown@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "react-native-enriched-markdown@npm:1.1.1"
+  peerDependencies:
+    katex: ">=0.16.0"
+    react: "*"
+    react-native: "*"
+  peerDependenciesMeta:
+    katex:
+      optional: true
+  checksum: 10/c8e4ece0e2c02bbe1edfe212034248c4b13db40e033ced960410385ec5e2d36d357843c91ca1d52de37511717cb5fc00276ae0eac8231ddb868f29af7cbe7b81
+  languageName: node
+  linkType: hard
+
 "react-native-gesture-handler@npm:^3.4.0":
   version: 3.4.0
   resolution: "react-native-gesture-handler@npm:3.4.0"
@@ -11226,6 +11240,7 @@ __metadata:
     prettier: "npm:^3.9.10"
     react: "npm:19.3.0"
     react-native: "npm:0.88.0"
+    react-native-enriched-markdown: "npm:^1.1.1"
     react-native-gesture-handler: "npm:^3.4.0"
     react-native-reanimated: "npm:^4.7.1"
     react-native-safe-area-context: "npm:^5.10.1"
