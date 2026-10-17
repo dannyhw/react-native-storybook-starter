@@ -24,8 +24,14 @@ type EventConstructor = new (
 // `dispatchEvent` only exists on native refs at the Canary release level.
 type EventTargetLike = {
   dispatchEvent?: (event: EventInstance) => boolean;
-  addEventListener?: (type: string, listener: () => void) => void;
-  removeEventListener?: (type: string, listener: () => void) => void;
+  addEventListener?: (
+    type: string,
+    listener: (event: EventInstance) => void,
+  ) => void;
+  removeEventListener?: (
+    type: string,
+    listener: (event: EventInstance) => void,
+  ) => void;
 };
 
 type KeyPressNativeEvent = TextInputKeyPressEvent['nativeEvent'] & {
@@ -56,6 +62,11 @@ export const TypingEvents = ({ text, delayMs }: TypingEventsProps) => {
   const [typing, setTyping] = useState(false);
   const [log, setLog] = useState<string[]>([]);
   const [bubbled, setBubbled] = useState(0);
+  const [assertions, setAssertions] = useState({ passed: 0, failed: 0 });
+  // Events seen by the `onKeyPress` prop and by the container listener, so each
+  // dispatch can assert that its own event object reached both.
+  const handledByProp = useRef(new WeakSet<object>());
+  const handledByContainer = useRef(new WeakSet<object>());
 
   const append = useCallback(
     (line: string) => setLog(prev => [...prev.slice(-7), line]),
@@ -65,12 +76,16 @@ export const TypingEvents = ({ text, delayMs }: TypingEventsProps) => {
   // The container counts keypresses that bubble up from the input.
   useEffect(() => {
     const container = containerRef.current as EventTargetLike | null;
-    const onKeyPress = () => setBubbled(count => count + 1);
+    const onKeyPress = (event: EventInstance) => {
+      handledByContainer.current.add(event);
+      setBubbled(count => count + 1);
+    };
     container?.addEventListener?.('keypress', onKeyPress);
     return () => container?.removeEventListener?.('keypress', onKeyPress);
   }, []);
 
   const onKeyPress = (event: TextInputKeyPressEvent) => {
+    handledByProp.current.add(event);
     const { key, dispatched } = event.nativeEvent as KeyPressNativeEvent;
     append(`${dispatched ? 'dispatched' : 'native'} keypress "${key}"`);
     // Real typing also sends `change`, which `onChangeText` handles.
@@ -88,7 +103,22 @@ export const TypingEvents = ({ text, delayMs }: TypingEventsProps) => {
     }
     setTyping(true);
     for (const key of keys) {
-      input.dispatchEvent(createKeyPressEvent(key));
+      const event = createKeyPressEvent(key);
+      input.dispatchEvent(event);
+      // Dispatch is synchronous, so both handlers must have run by now.
+      const failures = [
+        !handledByProp.current.has(event) && 'onKeyPress prop',
+        !handledByContainer.current.has(event) && 'container listener',
+      ].filter(Boolean);
+      if (failures.length === 0) {
+        setAssertions(prev => ({ ...prev, passed: prev.passed + 1 }));
+      } else {
+        setAssertions(prev => ({ ...prev, failed: prev.failed + 1 }));
+        append(`✗ "${key}" not handled by ${failures.join(' or ')}`);
+        console.error(
+          `keypress "${key}" was not handled by ${failures.join(' or ')}`,
+        );
+      }
       await wait(delayMs);
     }
     setTyping(false);
@@ -128,6 +158,7 @@ export const TypingEvents = ({ text, delayMs }: TypingEventsProps) => {
             setValue('');
             setLog([]);
             setBubbled(0);
+            setAssertions({ passed: 0, failed: 0 });
           }}
         >
           <Text style={styles.buttonText}>Reset</Text>
@@ -136,6 +167,17 @@ export const TypingEvents = ({ text, delayMs }: TypingEventsProps) => {
 
       <Text style={styles.status}>
         value: "{value}" · keypresses bubbled to container: {bubbled}
+      </Text>
+
+      <Text
+        testID="typing-assertions"
+        style={[
+          styles.status,
+          assertions.failed > 0 ? styles.fail : styles.pass,
+        ]}
+      >
+        {assertions.failed > 0 ? '✗' : '✓'} assertions: {assertions.passed}{' '}
+        passed, {assertions.failed} failed
       </Text>
 
       <View>
@@ -184,6 +226,12 @@ const styles = StyleSheet.create({
   },
   status: {
     fontWeight: '600',
+  },
+  pass: {
+    color: '#15803d',
+  },
+  fail: {
+    color: '#b91c1c',
   },
   logLine: {
     fontFamily: 'Menlo',
