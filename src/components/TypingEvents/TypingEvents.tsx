@@ -50,6 +50,19 @@ function createKeyPressEvent(key: string): EventInstance {
 
 const wait = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
+// Lets a story `play` function drive the mounted story, since play functions
+// on React Native get no canvas element to query.
+export type TypingEventsHandle = {
+  typeText: (text: string) => Promise<void>;
+  reset: () => void;
+  getInputText: () => string;
+  setPlayStatus: (status: string) => void;
+};
+
+export const typingEventsHandle: { current: TypingEventsHandle | null } = {
+  current: null,
+};
+
 export type TypingEventsProps = {
   text: string;
   delayMs: number;
@@ -63,6 +76,10 @@ export const TypingEvents = ({ text, delayMs }: TypingEventsProps) => {
   const [log, setLog] = useState<string[]>([]);
   const [bubbled, setBubbled] = useState(0);
   const [assertions, setAssertions] = useState({ passed: 0, failed: 0 });
+  const [playStatus, setPlayStatus] = useState<string | null>(null);
+  // The text the TextInput is rendered with, readable outside React.
+  const valueRef = useRef(value);
+  valueRef.current = value;
   // Events seen by the `onKeyPress` prop and by the container listener, so each
   // dispatch can assert that its own event object reached both.
   const handledByProp = useRef(new WeakSet<object>());
@@ -124,6 +141,31 @@ export const TypingEvents = ({ text, delayMs }: TypingEventsProps) => {
     setTyping(false);
   };
 
+  const reset = useCallback(() => {
+    setValue('');
+    setLog([]);
+    setBubbled(0);
+    setAssertions({ passed: 0, failed: 0 });
+    setPlayStatus(null);
+  }, []);
+
+  // The handle is registered once, so it reaches the latest `dispatchKeys`
+  // (and through it the latest `delayMs`) via a ref.
+  const dispatchKeysRef = useRef(dispatchKeys);
+  dispatchKeysRef.current = dispatchKeys;
+
+  useEffect(() => {
+    typingEventsHandle.current = {
+      typeText: textToType => dispatchKeysRef.current([...textToType]),
+      reset,
+      getInputText: () => valueRef.current,
+      setPlayStatus,
+    };
+    return () => {
+      typingEventsHandle.current = null;
+    };
+  }, [reset]);
+
   return (
     <View ref={containerRef} style={styles.container}>
       <TextInput
@@ -152,15 +194,7 @@ export const TypingEvents = ({ text, delayMs }: TypingEventsProps) => {
         >
           <Text style={styles.buttonText}>Backspace</Text>
         </Pressable>
-        <Pressable
-          style={[styles.button, styles.secondary]}
-          onPress={() => {
-            setValue('');
-            setLog([]);
-            setBubbled(0);
-            setAssertions({ passed: 0, failed: 0 });
-          }}
-        >
+        <Pressable style={[styles.button, styles.secondary]} onPress={reset}>
           <Text style={styles.buttonText}>Reset</Text>
         </Pressable>
       </View>
@@ -179,6 +213,18 @@ export const TypingEvents = ({ text, delayMs }: TypingEventsProps) => {
         {assertions.failed > 0 ? '✗' : '✓'} assertions: {assertions.passed}{' '}
         passed, {assertions.failed} failed
       </Text>
+
+      {playStatus != null && (
+        <Text
+          testID="typing-play-status"
+          style={[
+            styles.status,
+            playStatus.startsWith('✗') ? styles.fail : styles.pass,
+          ]}
+        >
+          play: {playStatus}
+        </Text>
+      )}
 
       <View>
         {log.map((line, index) => (

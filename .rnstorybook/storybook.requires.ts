@@ -43,7 +43,9 @@ globalThis.STORIES = normalizedStories;
 
 module?.hot?.accept?.();
 
-const options = {}
+const options = {
+  "playFn": true
+}
 
 if (!globalThis.view) {
   globalThis.view = start({
