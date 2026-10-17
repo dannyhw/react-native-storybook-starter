@@ -3,9 +3,7 @@ import ReactAppDependencyProvider
 import React_RCTAppDelegate
 import UIKit
 
-// Apps built with the iOS 27 SDK must use the scene-based life cycle. This follows
-// the RN 0.88 template; the linking and launch options bridging below can be replaced
-// with RCTLinkingManager.scene(...) and startReactNative(...connectionOptions:) on 0.88.
+// Apps built with the iOS 27 SDK must use the scene-based life cycle.
 class SceneDelegate: RCTDefaultReactNativeFactoryDelegate, UIWindowSceneDelegate {
   var window: UIWindow?
   var reactNativeFactory: RCTReactNativeFactory?
@@ -23,28 +21,30 @@ class SceneDelegate: RCTDefaultReactNativeFactoryDelegate, UIWindowSceneDelegate
     reactNativeFactory = RCTReactNativeFactory(delegate: self)
     window = UIWindow(windowScene: windowScene)
 
+    #if DEBUG
+      reactNativeFactory?.devMenuConfiguration = RCTDevMenuConfiguration(
+        devMenuEnabled: true,
+        shakeGestureEnabled: true,
+        keyboardShortcutsEnabled: true
+      )
+    #endif
+
     reactNativeFactory?.startReactNative(
       withModuleName: "react_native_storybook_starter",
       in: window,
-      launchOptions: launchOptions(from: connectionOptions)
+      connectionOptions: connectionOptions
     )
   }
 
   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+    // RCTLinkingManager only forwards the first context, so pass them one at a time.
     for context in URLContexts {
-      var options: [UIApplication.OpenURLOptionsKey: Any] = [:]
-      options[.sourceApplication] = context.options.sourceApplication
-      options[.annotation] = context.options.annotation
-      RCTLinkingManager.application(UIApplication.shared, open: context.url, options: options)
+      RCTLinkingManager.scene(scene, openURLContexts: [context])
     }
   }
 
   func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-    RCTLinkingManager.application(
-      UIApplication.shared,
-      continue: userActivity,
-      restorationHandler: { _ in }
-    )
+    RCTLinkingManager.scene(scene, continue: userActivity)
   }
 
   override func sourceURL(for bridge: RCTBridge) -> URL? {
@@ -57,23 +57,5 @@ class SceneDelegate: RCTDefaultReactNativeFactoryDelegate, UIWindowSceneDelegate
     #else
       Bundle.main.url(forResource: "main", withExtension: "jsbundle")
     #endif
-  }
-
-  // Linking.getInitialURL reads the launch URL from launch options, which scenes
-  // no longer receive, so rebuild them from the scene's connection options.
-  private func launchOptions(
-    from connectionOptions: UIScene.ConnectionOptions
-  ) -> [UIApplication.LaunchOptionsKey: Any] {
-    var launchOptions: [UIApplication.LaunchOptionsKey: Any] = [:]
-    if let url = connectionOptions.urlContexts.first?.url {
-      launchOptions[.url] = url
-    }
-    if let userActivity = connectionOptions.userActivities.first {
-      launchOptions[.userActivityDictionary] = [
-        UIApplication.LaunchOptionsKey.userActivityType: userActivity.activityType,
-        "UIApplicationLaunchOptionsUserActivityKey": userActivity,
-      ]
-    }
-    return launchOptions
   }
 }
