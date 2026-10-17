@@ -17,8 +17,11 @@ class SceneDelegate: RCTDefaultReactNativeFactoryDelegate, UIWindowSceneDelegate
       return
     }
 
+    // iOS only emits pointer and click events when W3C pointer events are on.
+    RCTSetDispatchW3CPointerEvents(true)
     dependencyProvider = RCTAppDependencyProvider()
-    reactNativeFactory = RCTReactNativeFactory(delegate: self)
+    // Canary enables the EventTarget imperative API (addEventListener etc.) on native refs.
+    reactNativeFactory = RCTReactNativeFactory(delegate: self, releaseLevel: RCTReleaseLevel.Canary)
     window = UIWindow(windowScene: windowScene)
 
     #if DEBUG
