@@ -37,7 +37,10 @@ class SceneDelegate: RCTDefaultReactNativeFactoryDelegate, UIWindowSceneDelegate
   }
 
   func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-    RCTLinkingManager.scene(scene, openURLContexts: URLContexts)
+    // RCTLinkingManager only forwards the first context, so pass them one at a time.
+    for context in URLContexts {
+      RCTLinkingManager.scene(scene, openURLContexts: [context])
+    }
   }
 
   func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
